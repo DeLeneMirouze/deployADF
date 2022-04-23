@@ -32,3 +32,15 @@ stages:
               azurePowerShellVersion: LatestVersion
               ScriptType: "FilePath"
               scriptPath: infrastructure/DeployADF.ps1
+
+  - stage: DEPLOY_PIPELINE
+    jobs:
+      - job:
+        steps:
+          - task: AzurePowerShell@5
+            displayName: Deployer ADF pipeline
+            inputs:
+              azureSubscription: "DemoADFSC"
+              azurePowerShellVersion: LatestVersion
+              ScriptType: "FilePath"
+              scriptPath: pipeline/DeployPipeline.ps1

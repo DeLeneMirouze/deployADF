@@ -1,0 +1,52 @@
+{
+    "contentVersion": "1.0.0.0",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "parameters": {
+        "name": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string"
+        },
+        "gitAccountName": {
+            "type": "String"
+        },
+        "gitRepositoryName": {
+            "type": "String"
+        }
+    },
+    "variables": {
+        "repoConfiguration": {
+            "accountName": "[parameters('gitAccountName')]",
+            "collaborationBranch": "main",
+            "lastCommitId": "",
+            "repositoryName": "[parameters('gitRepositoryName')]",
+            "rootFolder": "/",
+            "tenantId": "",
+            "type": "FactoryGitHubConfiguration"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.DataFactory/factories",
+            "apiVersion": "2018-06-01",
+            "name": "[parameters('name')]",
+            "location": "[parameters('location')]",
+            "identity": {
+                "type": "SystemAssigned"
+            },
+            "properties": {
+                "encryption": {
+                    "identity": {
+                        "userAssignedIdentity": "string"
+                    },
+                    "keyName": "string",
+                    "keyVersion": "string",
+                    "vaultBaseUrl": "string"
+                },
+                "globalParameters": {},
+                "repoConfiguration": "[variables('repoConfiguration')]"
+            }
+        }
+    ]
+}
