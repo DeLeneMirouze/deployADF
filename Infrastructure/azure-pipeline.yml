@@ -15,7 +15,7 @@ stages:
       - job:
         steps:
           - task: AzurePowerShell@5
-            DisplayName: Deployer RG
+            displayName: Deployer RG
             inputs:
               azureSubscription: "DemoADFSC"
               azurePowerShellVersion: LatestVersion
@@ -25,7 +25,7 @@ stages:
                 New-AzResourceGroup -Name ${{ variables.resourceGroupName }}  -Location ${{variables.location}} -Force
 
           - task: AzurePowerShell@5
-            DisplayName: Deployer ADF
+            displayName: Deployer ADF
             variables:
               dataFactoryName: adffdlm2
             inputs:
