@@ -13,6 +13,6 @@ New-AzResourceGroupDeployment `
     -Name 'dataFactory' `
     -Mode Incremental `
     -TemplateFile "infrastructure\templateADF.json" `
-    -TemplateParameterObject $templateParameterObject -
+    -TemplateParameterObject $templateParameterObject 
 
 
