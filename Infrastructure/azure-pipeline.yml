@@ -1,0 +1,35 @@
+name: $(TeamProject)_$(Build.DefinitionName)_$(SourceBranchName)_$(Date:dd-MM-yyyy)$(Rev:.r)
+
+trigger: none
+
+variables:
+  location: westeurope
+  resourceGroupName: RG2
+
+pool:
+  vmImage: windows-latest
+
+stages:
+  - stage: DEPLOYINFRA
+    jobs:
+      - job:
+        steps:
+          - task: AzurePowerShell@5
+            DisplayName: Deployer RG
+            inputs:
+              azureSubscription: "DemoADFSC"
+              azurePowerShellVersion: LatestVersion
+              ScriptType: "InlineScript"
+              Inline: |
+                write-host "##[warning]Déployer RG: " ${{ variables.resourceGroupName }} 
+                New-AzResourceGroup -Name ${{ variables.resourceGroupName }}  -Location ${{variables.location}} -Force
+
+          - task: AzurePowerShell@5
+            DisplayName: Deployer ADF
+            variables:
+              dataFactoryName: adffdlm2
+            inputs:
+              azureSubscription: "DemoADFSC"
+              azurePowerShellVersion: LatestVersion
+              ScriptType: "FilePath"
+              scriptPath: DeployADF.ps1
