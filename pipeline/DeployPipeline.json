@@ -36,14 +36,6 @@
                 "type": "SystemAssigned"
             },
             "properties": {
-                "encryption": {
-                    "identity": {
-                        "userAssignedIdentity": "string"
-                    },
-                    "keyName": "string",
-                    "keyVersion": "string",
-                    "vaultBaseUrl": "string"
-                },
                 "globalParameters": {},
                 "repoConfiguration": "[variables('repoConfiguration')]"
             }
