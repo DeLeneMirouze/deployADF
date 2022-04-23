@@ -31,4 +31,4 @@ stages:
               azureSubscription: "DemoADFSC"
               azurePowerShellVersion: LatestVersion
               ScriptType: "FilePath"
-              scriptPath: DeployADF.ps1
+              scriptPath: infrastructure/DeployADF.ps1
