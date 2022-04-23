@@ -1,21 +1,18 @@
 
-$currentDataFactory = @{
-    name              = $ENV:dataFactoryName
-    resourceGroupName = $ENV:resourceGroupName
-}
+write-host "Deploy ADF $($ENV:dataFactoryName)"
 
 $templateParameterObject = @{
-    dataFactories = $currentDataFactory
-    location      = $ENV:location
+    name     = $ENV:dataFactoryName
+    location = $ENV:location
 }
 
-write-host $templateParameterObject
+write-host ($templateParameterObject | ConvertTo-Json)
 
 New-AzResourceGroupDeployment `
     -ResourceGroupName $ENV:resourceGroupName `
     -Name 'dataFactory' `
     -Mode Incremental `
     -TemplateFile "infrastructure\templateADF.json" `
-    -TemplateParameterObject $templateParameterObject 
+    -TemplateParameterObject $templateParameterObject -
 
 
