@@ -11,13 +11,11 @@ $templateParameterObject = @{
 
 write-host $templateParameterObject
 
-DeployArmTemplate `
-    -deploymentName 'dataFactory' `
-    -output $arrayDataFactories `
-    -resourceGroupName $ENV:resourceGroupName `
-    -templateFile "DeployADF.json" `
-    -templateParameterObject $templateParameterObject `
-    -mode Incremental `
-    -job $false
+New-AzResourceGroupDeployment `
+    -ResourceGroupName $ENV:resourceGroupName `
+    -Name 'dataFactory' `
+    -Mode Incremental `
+    -TemplateFile "DeployADF.json" `
+    -TemplateParameterObject $templateParameterObject 
 
 
