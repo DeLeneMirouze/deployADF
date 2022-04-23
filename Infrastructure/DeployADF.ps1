@@ -15,7 +15,7 @@ New-AzResourceGroupDeployment `
     -ResourceGroupName $ENV:resourceGroupName `
     -Name 'dataFactory' `
     -Mode Incremental `
-    -TemplateFile "infrastructure\DeployADF.json" `
+    -TemplateFile "infrastructure\templateADF.json" `
     -TemplateParameterObject $templateParameterObject 
 
 
