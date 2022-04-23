@@ -5,6 +5,7 @@ trigger: none
 variables:
   location: westeurope
   resourceGroupName: RG2
+  dataFactoryName: adffdlm2
 
 pool:
   vmImage: windows-latest
@@ -26,8 +27,6 @@ stages:
 
           - task: AzurePowerShell@5
             displayName: Deployer ADF
-            variables:
-              dataFactoryName: adffdlm2
             inputs:
               azureSubscription: "DemoADFSC"
               azurePowerShellVersion: LatestVersion
