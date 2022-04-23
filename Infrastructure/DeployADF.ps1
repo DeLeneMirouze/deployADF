@@ -9,6 +9,8 @@ $templateParameterObject = @{
     location      = $ENV:location
 }
 
+write-host $templateParameterObject
+
 DeployArmTemplate `
     -deploymentName 'dataFactory' `
     -output $arrayDataFactories `
