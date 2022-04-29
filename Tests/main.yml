@@ -7,7 +7,7 @@ stages:
         steps:
           - task: powershell@2
             inputs:
-              filePath: ./Tests/LoadData.ps1
+              filePath: LoadData.ps1
 
           - script: echo $(foo)
             displayName: read foo
@@ -25,6 +25,6 @@ stages:
           - script: echo $(foo2)
             displayName: read foo2
 
-  - template: /Tests/myTemplate.yml
+  - template: myTemplate.yml
     parameters:
       foo3: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
