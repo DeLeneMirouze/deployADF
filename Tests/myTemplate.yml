@@ -6,5 +6,5 @@ stages:
   - stage: Stage3
     jobs:
       - job:
-          steps:
-            - script: echo ${{ parameters.foo3 }}
+        steps:
+          - script: echo ${{ parameters.foo3 }}
