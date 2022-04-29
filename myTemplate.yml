@@ -3,7 +3,7 @@ parameters:
   foo3: ""
 
 stages:
-  stage: Stage3
+  - stage: Stage3
     jobs:
       - job:
           steps:
