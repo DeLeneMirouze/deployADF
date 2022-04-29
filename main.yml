@@ -14,10 +14,10 @@ stages:
             name: step1
 
   - stage: Stage2
-    jobs:
     variables:
       foo2: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
-
-    steps:
-      - script: echo $(foo2)
-        displayName: read foo2
+    jobs:
+      - job:
+          steps:
+            - script: echo $(foo2)
+              displayName: read foo2
