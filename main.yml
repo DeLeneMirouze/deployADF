@@ -5,7 +5,7 @@ stages:
         steps:
           - task: powershell@2
             inputs:
-              filePath: ./LoadData.psm1
+              filePath: ./Tests/LoadData.psm1
 
           - script: echo $(foo)
             displayName: read foo
