@@ -1,0 +1,10 @@
+# myTemplate.yml
+parameters:
+  foo3: ""
+
+stages:
+  stage: Stage3
+    jobs:
+      - job:
+          steps:
+            - script: echo ${{ parameters.foo3 }}
