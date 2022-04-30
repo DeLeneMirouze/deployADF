@@ -32,11 +32,11 @@ stages:
         steps:
           - script: echo $(foo2)
             displayName: read foo2
-          - script: echo $(toto)
+          - script: echo ${{ variables.toto }}
             displayName: read toto
 
-  - template: myTemplate.yml
-    parameters:
-      foo3: $(toto)
-      # foo3: "##vso[task.setvariable variable=bar;isOutput=true]$[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]"
-      foo4: $(valeur)
+  # - template: myTemplate.yml
+  #   parameters:
+  #     foo3: $(toto)
+  #     # foo3: "##vso[task.setvariable variable=bar;isOutput=true]$[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]"
+  #     foo4: $(valeur)
