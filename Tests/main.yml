@@ -2,6 +2,7 @@
 
 variables:
   valeur: 5
+  toto: ""
 
 stages:
   - stage: Stage1
@@ -19,6 +20,10 @@ stages:
             name: step1
             displayName: create public variable
 
+          - bash: echo "##vso[task.setvariable variable=toto;isOutput=true]$(foo)"
+            name: step2
+            displayName: create public variable
+
   - stage: Stage2
     variables:
       foo2b: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
@@ -27,16 +32,11 @@ stages:
         steps:
           - script: echo $(foo2)
             displayName: read foo2
+          - script: echo $(toto)
+            displayName: read toto
 
-  - stage: Stage2bis
-    jobs:
-      - job:
-        steps:
-          - script: echo $( stageDependencies.Stage2.outputs['foo2b'] )
-          - script: echo ${{ stageDependencies.Stage2.outputs['foo2b'] }}
-
-  # - template: myTemplate.yml
-  #   parameters:
-  #     # foo3: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
-  #     foo3: "##vso[task.setvariable variable=bar;isOutput=true]$[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]"
-  #     foo4: $(valeur)
+  - template: myTemplate.yml
+    parameters:
+      foo3: $(toto)
+      # foo3: "##vso[task.setvariable variable=bar;isOutput=true]$[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]"
+      foo4: $(valeur)
