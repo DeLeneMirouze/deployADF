@@ -31,5 +31,5 @@ stages:
   - template: myTemplate.yml
     parameters:
       # foo3: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
-      foo3: "##vso[task.setvariable variable=bar;isOutput=true]$(foo)"
+      foo3: "##vso[task.setvariable variable=bar;isOutput=true]$[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]"
       foo4: $(valeur)
