@@ -19,16 +19,17 @@ stages:
             name: step1
             displayName: create public variable
 
-  - stage: Stage2
-    variables:
-      foo2: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
-    jobs:
-      - job:
-        steps:
-          - script: echo $(foo2)
-            displayName: read foo2
+  # - stage: Stage2
+  #   variables:
+  #     foo2: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
+  #   jobs:
+  #     - job:
+  #       steps:
+  #         - script: echo $(foo2)
+  #           displayName: read foo2
 
   - template: myTemplate.yml
     parameters:
       # foo3: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
+      foo3: "##vso[task.setvariable variable=bar;isOutput=true]$(foo)"
       foo4: $(valeur)
