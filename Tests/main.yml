@@ -32,7 +32,8 @@ stages:
     jobs:
       - job:
         steps:
-          - script: echo $[ stageDependencies.Stage2.outputs['foo2b'] ]
+          - script: echo $( stageDependencies.Stage2.outputs['foo2b'] )
+          - script: echo ${{ stageDependencies.Stage2.outputs['foo2b'] }}
 
   # - template: myTemplate.yml
   #   parameters:
