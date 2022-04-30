@@ -1,5 +1,8 @@
 # main.yml
 
+variables:
+  - valeur: 5
+
 stages:
   - stage: Stage1
     jobs:
@@ -28,3 +31,4 @@ stages:
   - template: myTemplate.yml
     parameters:
       foo3: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
+      foo4: $(valeur)
