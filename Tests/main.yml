@@ -2,7 +2,7 @@
 
 variables:
   valeur: 5
-  toto: ""
+  toto: "a"
 
 stages:
   - stage: Stage1
@@ -32,7 +32,7 @@ stages:
         steps:
           - script: echo $(foo2)
             displayName: read foo2
-          - script: echo ${{ variables.toto }}
+          - script: echo $[ variables.toto ]
             displayName: read toto
 
   # - template: myTemplate.yml
