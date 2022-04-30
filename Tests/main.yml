@@ -20,9 +20,8 @@ stages:
             name: step1
             displayName: create public variable
 
-          - bash: echo "##vso[task.setvariable variable=toto;isOutput=true]$(foo)"
+          - bash: echo $(toto)
             name: step2
-            displayName: create public variable
 
   - stage: Stage2
     variables:
