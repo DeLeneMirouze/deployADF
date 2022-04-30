@@ -1,7 +1,7 @@
 # main.yml
 
 variables:
-  - valeur: 5
+  valeur: 5
 
 stages:
   - stage: Stage1
