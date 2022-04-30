@@ -1,7 +1,7 @@
 # myTemplate.yml
 parameters:
-  foo3: ""
-  foo4: ""
+  - foo3: ""
+  - foo4: ""
 
 stages:
   - stage: Stage3
