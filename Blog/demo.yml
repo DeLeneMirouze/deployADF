@@ -9,10 +9,16 @@ stages:
           - bash: echo "##vso[task.setvariable variable=foo1;isOutput=true]$(foo1)"
             name: step1
 
-  - stage: B
-    variables:
-      foo1: $[ stageDependencies.A.job1.outputs['step1.foo1'] ]
-    jobs:
       - job: job2
+        variables:
+          foo1: $[ stageDependencies.A.job1.outputs['step1.foo1'] ]
         steps:
           - bash: echo $(foo1)
+
+  # - stage: B
+  #   variables:
+  #     foo1: $[ stageDependencies.A.job1.outputs['step1.foo1'] ]
+  #   jobs:
+  #     - job: job2
+  #       steps:
+  #         - bash: echo $(foo1)
