@@ -6,3 +6,9 @@ stages:
       - job: job1
         steps:
           - bash: echo $(foo1)
+
+  - stage: B
+    jobs:
+      - job: job2
+        steps:
+          - bash: echo $(foo1)
