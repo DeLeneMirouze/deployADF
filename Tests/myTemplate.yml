@@ -5,7 +5,7 @@ parameters:
 
 stages:
   - stage: Stage3
-    dependsOn: [Stage1]
+    dependsOn: [Stage2]
     jobs:
       - job:
         steps:
