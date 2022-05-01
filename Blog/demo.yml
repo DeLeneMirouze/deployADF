@@ -6,10 +6,10 @@ stages:
       - job: job1
         steps:
           - bash: echo $(foo1)
-          - bash: echo "##vso[task.setvariable variable=foo1;isOutput=true]$(foo1)"
+          - bash: echo "##vso[task.setvariable variable=foo2;isOutput=true]$(foo1)"
 
   - stage: B
     jobs:
       - job: job2
         steps:
-          - bash: echo $(foo1)
+          - bash: echo $(foo2)
