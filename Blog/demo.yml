@@ -5,4 +5,4 @@ stages:
     jobs:
       - job: job1
         steps:
-          - script: echo $(foo1)
+          - bash: echo $(foo1)
