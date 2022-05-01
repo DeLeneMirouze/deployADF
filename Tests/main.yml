@@ -15,5 +15,3 @@ stages:
             displayName: create public variable
 
   - template: myTemplate.yml
-    # parameters:
-    #   foo3: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
