@@ -34,6 +34,7 @@ stages:
   #         - script: echo $[ variables.toto ]
   #           displayName: read toto
 
+  - stage: Stage3First
   - template: myTemplate.yml
     parameters:
       # foo3: $(toto)
