@@ -10,7 +10,7 @@ stages:
             name: step1
 
       - job: job2
-        dependsOn: [A]
+        dependsOn: [job1]
         variables:
           foo2: $[ dependencies.A.job1.outputs['step1.foo1'] ]
         steps:
