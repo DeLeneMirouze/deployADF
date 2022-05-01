@@ -32,8 +32,7 @@ stages:
   #       steps:
   #         - script: echo $(foo2)
   #           displayName: read foo2
-
   - template: myTemplate.yml
-    parameters:
-      # foo3: $(toto)
-      foo3: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
+    # parameters:
+    #   # foo3: $(toto)
+    #   foo3: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]

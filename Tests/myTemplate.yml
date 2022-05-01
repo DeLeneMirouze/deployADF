@@ -5,10 +5,12 @@ parameters:
 
 stages:
   - stage: Stage3
+    variables:
+    foo3: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
     dependsOn: [Stage1]
     jobs:
       - job:
         steps:
           # - script: echo ${{ parameters.foo4 }}
-          - script: echo ${{ parameters.foo3 }}
+          - script: echo $(foo3 )
           # - script: echo $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
