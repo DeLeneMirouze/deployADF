@@ -1,0 +1,9 @@
+stages:
+  - stage: A
+    variables:
+      foo1: 123
+    jobs:
+      - job: job1
+        name: job1
+        steps:
+          - script: echo ${{ parameters.foo1 }}
