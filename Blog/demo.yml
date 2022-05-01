@@ -10,7 +10,9 @@ stages:
             name: step1
 
   - stage: B
+    variables:
+      foo1: $[ stageDependencies.A.job1.outputs['step1.foo1'] ]
     jobs:
       - job: job2
         steps:
-          - bash: echo $[ stageDependencies.A.job1.outputs['step1.foo1'] ]
+          - bash: echo $(foo1)
