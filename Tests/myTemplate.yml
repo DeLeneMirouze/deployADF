@@ -11,6 +11,6 @@ stages:
     jobs:
       - job:
         steps:
-          - script: echo ${{ parameters.foo4 }}
+          - script: echo ${{ variables.foo4 }}
           # - script: echo ${{ parameters.foo3 }}
           # - script: echo $(foo4)
