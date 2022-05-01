@@ -16,23 +16,24 @@ stages:
           - script: echo $(foo)
             displayName: read foo
 
-          - bash: echo "##vso[task.setvariable variable=bar;isOutput=true]$(foo)"
+          # - bash: echo "##vso[task.setvariable variable=bar;isOutput=true]$(foo)"
+          #   name: step1
+          #   displayName: create public variable
+
+          - bash: echo "##vso[task.setvariable variable=bar;isOutput=true]hello"
             name: step1
             displayName: create public variable
 
-          - bash: echo $(toto)
-            name: step2
-
-  - stage: Stage2
-    variables:
-      foo2: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
-    jobs:
-      - job:
-        steps:
-          - script: echo $(foo2)
-            displayName: read foo2
+  # - stage: Stage2
+  #   variables:
+  #     foo2: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
+  #   jobs:
+  #     - job:
+  #       steps:
+  #         - script: echo $(foo2)
+  #           displayName: read foo2
 
   - template: myTemplate.yml
     parameters:
       # foo3: $(toto)
-      foo3: $(foo2)
+      foo3: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
