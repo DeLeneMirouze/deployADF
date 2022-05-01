@@ -12,7 +12,7 @@ stages:
       - job: job2
         dependsOn: [job1]
         variables:
-          foo2: $[ dependencies.A.job1.outputs['step1.foo1'] ]
+          foo2: $[ dependencies.job1.outputs['step1.foo1'] ]
         steps:
           - bash: echo $(foo2)
 
