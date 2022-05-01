@@ -1,16 +1,14 @@
 # myTemplate.yml
-parameters:
-  - name: foo3
-# - name: foo4
+# parameters:
+#   - name: foo3
+# # - name: foo4
 
 stages:
   - stage: Stage3
     variables:
-      foo4: $[ stageDependencies.Stage1.Job1.outputs['step2.bar2'] ]
+      foo4: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
     dependsOn: [Stage1]
     jobs:
       - job:
         steps:
-          # - script: echo ${{ variables.foo4
-          # - script: echo ${{ parameters.foo3 }}
           - script: echo $(foo4)
