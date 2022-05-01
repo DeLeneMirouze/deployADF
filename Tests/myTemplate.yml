@@ -6,7 +6,7 @@ parameters:
 stages:
   - stage: Stage3
     variables:
-    foo3: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
+      foo3: $[ stageDependencies.Stage1.Job1.outputs['step1.bar'] ]
     dependsOn: [Stage1]
     jobs:
       - job:
