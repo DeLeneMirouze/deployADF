@@ -26,4 +26,4 @@ pool:
 
 steps:
   - script: dir
-  - echo: "hello le monde!"
+  - script: echo "hello le monde!"
