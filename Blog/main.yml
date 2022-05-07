@@ -1,18 +1,18 @@
 pool:
   name: default
 
-# resources:
-#   repositories:
-#     - repository: myRepo1
-#       reaf: main
-#       type: github
-#       name: DeLeneMirouze/TimeHelper
-#       endpoint: Github
-#     - repository: myRepo2
-#       reaf: main
-#       type: github
-#       name: DeLeneMirouze/EscarGo
-#       endpoint: Github
+resources:
+  repositories:
+    - repository: myRepo1
+      reaf: main
+      type: github
+      name: DeLeneMirouze/TimeHelper
+      endpoint: Github
+    - repository: myRepo2
+      reaf: main
+      type: github
+      name: DeLeneMirouze/EscarGo
+      endpoint: Github
 
 # jobs:
 # - job:
