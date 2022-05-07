@@ -18,22 +18,21 @@ resources:
 # - job:
 #   workspace:
 #     clean: all
-# steps:
-#   - script: dir
-# - checkout: myRepo2
-
 steps:
-  - script: echo $(Agent.WorkFolder)
-  - script: echo $(Agent.BuildDirectory)
+  - script: dir
+  # - checkout: self
+  - checkout: myRepos1
     
-  - script: echo $(Build.SourcesDirectory)
-  - script: echo $(System.DefaultWorkingDirectory)
-    
-  - script: echo $(Build.BinariesDirectory)
-    
-  - script: echo $(Build.StagingDirectory)
-  - script: echo $(System.ArtifactsDirectory)
-  - script: echo $(Build.ArtifactStagingDirectory)
+# steps:
+#   - script: echo $(Agent.WorkFolder)
+#   - script: echo $(Agent.BuildDirectory)
 
+#   - script: echo $(Build.SourcesDirectory)
+#   - script: echo $(System.DefaultWorkingDirectory)
 
+#   - script: echo $(Build.BinariesDirectory)
+
+#   - script: echo $(Build.StagingDirectory)
+#   - script: echo $(System.ArtifactsDirectory)
+#   - script: echo $(Build.ArtifactStagingDirectory)
 
