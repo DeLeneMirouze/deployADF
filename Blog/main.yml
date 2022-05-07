@@ -6,7 +6,7 @@ resources:
     - repository: myRepo
       reaf: main
       type: github
-      name: TimeHelper
+      name: DeLeneMirouze/TimeHelper
       endpoint: Github
 
 steps:
