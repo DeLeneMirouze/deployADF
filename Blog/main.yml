@@ -5,7 +5,7 @@ resources:
   repositories:
     - repository: myRepo
       reaf: main
-      type: git
+      type: github
       name: TimeHelper
 
 steps:
