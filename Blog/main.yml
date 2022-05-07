@@ -17,4 +17,4 @@ resources:
 steps:
   - checkout: self
   - checkout: myRepo1
-  - checkout: myRepo2
+  # - checkout: myRepo2
