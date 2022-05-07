@@ -14,19 +14,12 @@ resources:
       name: DeLeneMirouze/EscarGo
       endpoint: Github
 
-# jobs:
-# - job:
-#   workspace:
-#     clean: all
 steps:
-  - script: dir
-  # - checkout: self
   - checkout: myRepo1
-    
-# steps:
-#   - script: echo $(Agent.WorkFolder)
-#   - script: echo $(Agent.BuildDirectory)
 
+  # steps:
+  #   - script: echo $(Agent.WorkFolder)
+  - script: echo $(Agent.BuildDirectory)
 #   - script: echo $(Build.SourcesDirectory)
 #   - script: echo $(System.DefaultWorkingDirectory)
 
