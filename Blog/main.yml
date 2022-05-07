@@ -8,11 +8,11 @@ resources:
       type: github
       name: DeLeneMirouze/TimeHelper
       endpoint: Github
-    - repository: myRepo2
-      reaf: main
-      type: github
-      name: DeLeneMirouze/EscarGo
-      endpoint: Github
+    # - repository: myRepo2
+    #   reaf: main
+    #   type: github
+    #   name: DeLeneMirouze/EscarGo
+    #   endpoint: Github
 
 steps:
   - checkout: self
