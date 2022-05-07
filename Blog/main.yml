@@ -23,17 +23,17 @@ resources:
 # - checkout: myRepo2
 
 steps:
-  - script: $(Agent.WorkFolder)
-  - script: $(Agent.BuildDirectory)
+  - script: echo $(Agent.WorkFolder)
+  - script: echo $(Agent.BuildDirectory)
     
-  - script: $(Build.SourcesDirectory)
-  - script: $(System.DefaultWorkingDirectory)
+  - script: echo $(Build.SourcesDirectory)
+  - script: echo $(System.DefaultWorkingDirectory)
     
-  - script: $(Build.BinariesDirectory)
+  - script: echo $(Build.BinariesDirectory)
     
-  - script: $(Build.StagingDirectory)
-  - script: $(System.ArtifactsDirectory)
-  - script: $(Build.ArtifactStagingDirectory)
+  - script: echo $(Build.StagingDirectory)
+  - script: echo $(System.ArtifactsDirectory)
+  - script: echo $(Build.ArtifactStagingDirectory)
 
 
 
