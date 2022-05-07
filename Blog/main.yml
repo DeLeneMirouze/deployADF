@@ -15,7 +15,8 @@ resources:
       endpoint: Github
 
 jobs:
-  - jobs:workspace:
+  - jobs:
+    workspace:
       clean: all
     steps:
       - checkout: self
