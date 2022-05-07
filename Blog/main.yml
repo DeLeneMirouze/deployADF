@@ -25,4 +25,4 @@ pool:
 #     # - checkout: myRepo2
 
 steps:
-  - script: dir
+  - script: dir
