@@ -22,6 +22,9 @@ steps:
   - publish: $(Agent.WorkFolder)\artefact
     artifact: drop
 
+  - download: current
+    artifact: drop
+
   # steps:
   #   - script: echo $(Agent.WorkFolder)
   # - script: echo $(Agent.BuildDirectory)
