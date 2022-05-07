@@ -1,6 +1,13 @@
 pool:
   name: default
 
+resources:
+  repositories:
+    - repository: myRepo
+      reaf: main
+      type: git
+      name: TimeHelper
+
 steps:
   - checkout: self
-    path: toto
+  - checkout: myRepos
