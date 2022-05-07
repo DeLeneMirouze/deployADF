@@ -1,25 +1,28 @@
 pool:
   name: default
 
-resources:
-  repositories:
-    - repository: myRepo1
-      reaf: main
-      type: github
-      name: DeLeneMirouze/TimeHelper
-      endpoint: Github
-    - repository: myRepo2
-      reaf: main
-      type: github
-      name: DeLeneMirouze/EscarGo
-      endpoint: Github
+# resources:
+#   repositories:
+#     - repository: myRepo1
+#       reaf: main
+#       type: github
+#       name: DeLeneMirouze/TimeHelper
+#       endpoint: Github
+#     - repository: myRepo2
+#       reaf: main
+#       type: github
+#       name: DeLeneMirouze/EscarGo
+#       endpoint: Github
 
-jobs:
-- job:
-  workspace:
-    clean: all
-  steps:
-    - checkout: self
-      clean: true
-    - checkout: myRepo1
-    # - checkout: myRepo2
+# jobs:
+# - job:
+#   workspace:
+#     clean: all
+#   steps:
+#     - checkout: self
+#       clean: true
+#     - checkout: myRepo1
+#     # - checkout: myRepo2
+
+steps:
+  - script: dir
