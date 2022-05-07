@@ -2,4 +2,5 @@ pool:
   name: default
 
 steps:
-  - script: dir
+  - checkout: self
+    path: toto
