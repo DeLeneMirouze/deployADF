@@ -15,6 +15,7 @@ pool:
 #       endpoint: Github
 
 steps:
+  - script: mkdir $(Agent.WorkFolder)\artefact
   - powershell: |
       Add-Content -Path $env:Agent_WorkFolder\artefact\message.txt -Value "Hello World!"
 
