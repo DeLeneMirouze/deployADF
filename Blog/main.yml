@@ -1,26 +1,29 @@
 pool:
   name: default
 
-resources:
-  repositories:
-    - repository: myRepo1
-      reaf: main
-      type: github
-      name: DeLeneMirouze/TimeHelper
-      endpoint: Github
-    - repository: myRepo2
-      reaf: main
-      type: github
-      name: DeLeneMirouze/EscarGo
-      endpoint: Github
+# resources:
+#   repositories:
+#     - repository: myRepo1
+#       reaf: main
+#       type: github
+#       name: DeLeneMirouze/TimeHelper
+#       endpoint: Github
+#     - repository: myRepo2
+#       reaf: main
+#       type: github
+#       name: DeLeneMirouze/EscarGo
+#       endpoint: Github
 
 steps:
-  - checkout: myRepo1
-  - checkout: self
+  - powershell: |
+      Add-Content -Path $env:Agent_WorkFolder\artefact\message.txt -Value "Hello World!"
+
+  - publish: $(Agent.WorkFolder)\artefact
+    artifact: drop
 
   # steps:
   #   - script: echo $(Agent.WorkFolder)
-  - script: echo $(Agent.BuildDirectory)
+  # - script: echo $(Agent.BuildDirectory)
 #   - script: echo $(Build.SourcesDirectory)
 #   - script: echo $(System.DefaultWorkingDirectory)
 
