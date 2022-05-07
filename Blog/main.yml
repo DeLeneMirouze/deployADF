@@ -21,7 +21,7 @@ resources:
 steps:
   - script: dir
   # - checkout: self
-  - checkout: myRepos1
+  - checkout: myRepo1
     
 # steps:
 #   - script: echo $(Agent.WorkFolder)
